@@ -1,0 +1,42 @@
+<html>
+     <head>
+           <title> chaiwallah App </title>
+           <style>
+                   *{ font-size:50px; }
+                   body { background-color:lightyellow; }
+          </style>
+          <script>
+                  function order()
+                  {
+                       event.preventDefault();
+                       let name = document.getElementById("name");
+                       let masala = document.getElementById("masala");
+                       let adrak = document.getElementById("adrak");
+                       let elaichi = document.getElementById("elaichi");
+                       let msg = document.getElementById("msg");
+
+                       let t = "";
+                       if (masala.checked )                 t= "masala";
+                       else if (adark.checked)              t= "adrak";
+                       else                                 t= "elaichi";
+                         
+                       let ans = name.value + " " + t;
+                       msg.innerHTML = ans;
+                  }
+          </script>
+     </head>
+     <body>
+     <center>
+            <h1> kamal chaiwallah App </h1>
+            <form onsubmit="order()">
+                    <input type="text" placeholder="enter ur name " id="name"/>
+                    <br/><br/>
+                    <input type="radio" name="s" value="masala" id="masala" checked/> Masala
+                    <input type="radio" name="s" value="adrak" id="adrak"/> Adrak
+                    <input type="radio" name="s" value="elaichi" id="elaichi"/> Elaichi
+                    <input type="submit" value="order"/>
+            </form>
+            <h1 id="msg"></h1>
+     </center>
+     </body>
+</html>
